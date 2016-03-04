@@ -1,0 +1,22 @@
+<%= render "common/navbar" %>
+<div class="container">
+  <div class="row well">
+    <div class="col-md-12">
+      <p>Search Bar</p>
+    </div>
+  </div>
+  <div class="row border-between">
+    <div class="col-md-9">
+      <p>Tour List</p>
+      <ul>
+        <% @tours.each do |tour| %>
+          <li><%= link_to(tour.title, tour_path(tour)) %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-md-3">
+      <p>Filter</p>
+    </div>
+  </div>
+</div>
+<%= render "common/footer" %>

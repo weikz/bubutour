@@ -1,0 +1,16 @@
+<%= render "common/navbar" %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"> User/Tour Profile</div>
+    <div class="col-md-9">
+      <% if user_signed_in? & current_user == @tour.user %>
+        <%= link_to("修改旅遊", edit_tour_path(@tour), class: "btn btn-primary btn-sm") %>
+      <% end %>
+      <h2> <%= @tour.title %> </h2>
+      <p> <%= @tour.description %> </p>
+    </div>
+  </div>
+</div>
+
+<%= render "common/footer" %>
