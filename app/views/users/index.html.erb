@@ -1,0 +1,22 @@
+<%= render "common/navbar" %>
+<div class="container">
+  <div class="row well">
+    <div class="col-md-12">
+      <p>Search Bar</p>
+    </div>
+  </div>
+  <div class="row border-between">
+    <div class="col-md-9">
+      <p>User List</p>
+      <ul>
+        <% @users.each do |user| %>
+          <li><%= link_to(user.email, user_path(user)) %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-md-3">
+      <p>Filter</p>
+    </div>
+  </div>
+</div>
+<%= render "common/footer" %>
