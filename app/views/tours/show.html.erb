@@ -1,14 +1,21 @@
 <%= render "common/navbar" %>
 
 <div class="container">
+  <div class="alert alert-info" role="alert">
+    <h3><%=link_to "#" do%> 參加這個旅行<% end %> or <%=link_to new_tour_path do%>創建一個這樣的旅行<% end %></h3>
+  </div>
   <div class="row">
-    <div class="col-md-3"> User/Tour Profile</div>
+    <div class="col-md-3">
+      <h2>細節</h2><hr>
+      <h2>導遊資訊</h2><hr>
+    </div>
     <div class="col-md-9">
       <% if user_signed_in? & current_user == @tour.user %>
         <%= link_to("修改旅遊", edit_tour_path(@tour), class: "btn btn-primary btn-sm") %>
       <% end %>
-      <h2> <%= @tour.title %> </h2>
-      <p> <%= @tour.description %> </p>
+      <h2> <%= @tour.title %> </h2><hr>
+      <p> <%= @tour.description %> </p><hr>
+      <h2> QA </h2>
     </div>
   </div>
 </div>
