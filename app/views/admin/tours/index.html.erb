@@ -1,0 +1,16 @@
+<%= render "common/navbar" %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-9">
+      <ul>
+        <% @tours.each do |tour|%>
+        <li> <%= link_to(tour.title,tours_path(tour)) %> <%=link_to("編輯",edit_admin_tour_path(tour))%> \\<%=link_to("刪除",admin_tour_path(tour), method: :delete)%></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+<%= render "common/footer" %>
